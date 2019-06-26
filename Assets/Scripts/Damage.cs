@@ -25,6 +25,12 @@ public class Damage : MonoBehaviour
                     if (GameManager.instance.life > 0)
                     {
                         GameManager.instance.life--;
+                        GameManager.instance.imgHearts[GameManager.instance.life].enabled = false;
+                    }
+
+                    if (GameManager.instance.life <= 0)
+                    {
+                        Destroy(gameObject);
                     }
                 }
             }
